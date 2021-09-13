@@ -1,6 +1,8 @@
 package com.se.arrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class NthMaxElementSumInEachArray {
     // Driver code
@@ -9,6 +11,8 @@ public class NthMaxElementSumInEachArray {
                                     {2,4,6,9,8,7,7},
                                     {7,6,6,3,2,1},
                                     {9,4} };
+
+
         // Calling the function
         nthMaxElementInEachArray(4, arr);
     }
@@ -24,20 +28,25 @@ public class NthMaxElementSumInEachArray {
                 inter[j] = arr[i][j];
             }
             Arrays.sort(inter);
-            System.out.println(" ---------------- ");
+            HashSet<Integer> hs = new HashSet<>();
             for(int k=0; k<inter.length; k++){
-                System.out.println(inter[k]);
+                hs.add(inter[k]);
             }
-            if(inter.length >= 3){
-                System.out.println(" 3rd largest---------- "+inter[inter.length-3]);
-                result[i] = inter[inter.length-3];
-            }else if(inter.length == 2){
-                System.out.println(" 3rd largest---------- "+inter[inter.length-2]);
-                result[i] = inter[inter.length-2];
+            ArrayList<Integer> al = new ArrayList<>();
+            al.addAll(hs);
+            System.out.println(" ----Array with out duplicates------------ ");
+            System.out.println(al);
+            System.out.println(" ---------------- ");
+            if(al.size() >= 3){
+                System.out.println(" 3rd largest---------- "+al.get(al.size()-3));
+                result[i] = al.get(al.size()-3);
+            }else if(al.size() == 2){
+                System.out.println(" 3rd largest---------- "+al.get(al.size()-2));
+                result[i] = al.get(al.size()-2);
             }
             else{
-                System.out.println(" 3rd largest---------- "+inter[inter.length-1]);
-                result[i] = inter[inter.length-1];
+                System.out.println(" 3rd largest---------- "+al.get(al.size()-1));
+                result[i] = al.get(al.size()-1);
             }
             i++;
         }
