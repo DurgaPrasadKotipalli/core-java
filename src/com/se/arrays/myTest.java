@@ -20,20 +20,20 @@ class B {
 public class myTest extends B implements A{
 
 	public static void main(String[] args) throws InterruptedException {
-        /*
-		List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-		Optional<Integer> any = list.stream().filter(x -> x > 1).findAny();
-		if (any.isPresent()) {
-			Integer result = any.get();
-			//System.out.println(result);
-		}
-		
-		*/
-		
+
 		myTest obj[][] = new myTest[3][];
 		//System.out.println(obj[2][0].toString());
-		
+
+		// create a list
+		List<String> list = Arrays.asList("Hello ",
+				"G", "E", "E", "K", "S!");
+        boolean value = list.stream().allMatch((x -> x.equals("E")));
+		System.out.println("value = " + value);
+		// using parallelStream()
+		// method for parallel stream
+		list.stream().forEach(System.out::print);
+
 		HashMap<Integer, Integer> hm = new HashMap<>();
 		
 		hm.put(1, 10);

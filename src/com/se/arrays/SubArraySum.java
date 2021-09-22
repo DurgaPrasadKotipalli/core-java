@@ -29,7 +29,7 @@ public class SubArraySum {
                 }//for
                 System.out.println(list+":: sum : "+sum);
                 if(lengthOfSubArray == -1 && sum == target ){
-                    lengthOfSubArray = sum;
+                    lengthOfSubArray = list.size();
                 }
 
                 if(sum == target && list.size() < lengthOfSubArray){

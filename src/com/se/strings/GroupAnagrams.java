@@ -34,7 +34,7 @@ public class GroupAnagrams {
 		for (int i = 0; i < list.size(); i++) {
 			map.putIfAbsent(list.get(i), new ArrayList<>());
 			map.get(list.get(i)).add(i);
-			break;
+			//break;
 		}
 		
 		System.out.println(map);

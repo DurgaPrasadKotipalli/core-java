@@ -38,12 +38,10 @@ public class StringReverse {
 
 				if (str.charAt(start) == ' ') {
 					start++;
-					continue;
 				}
 				
 				else if(str.charAt(end) == ' ') {
 					end--;
-					continue;
 				}
 				
 				else {

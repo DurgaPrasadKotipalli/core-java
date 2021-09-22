@@ -13,7 +13,6 @@ public class MoveZeroToEnd {
     	   System.out.println(result[i]);
        }
 		
-		
 
 	}
 	

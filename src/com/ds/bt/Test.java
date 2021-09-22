@@ -7,55 +7,29 @@ import com.se.inheritance.B;
 
 
 
-public class Test extends B{
-	
-	{
-		System.out.println("C");
-	}
-	
-	static {
-		System.out.println("D");
-	}
-	
-	Test(){
-		System.out.println("hello");
-	}
+public class Test {
+
 
 	public static void main(String[] args) {
 		
-		int arr[] = {24, 2, 4, 233, 7667, 2, 23, 24, 4, 5, 4 };
-		HashMap<String, Integer> map = new HashMap<>();
-		map.put("eight", 8);
-		map.put("four", 4);
-		map.put("ten", 10);
-		map.put("two", 2);
 
-		map.entrySet().stream().sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).forEach(System.out::println);
+				int[] array1 = {1, 2, 5, 5, 8, 9, 7};
+				int[] array2 = {0, 1, 6, 15, 6, 7, 4, 0};
 
-
-
-
-
+				System.out.println("Array1 : "+Arrays.toString(array1));
+				System.out.println("Array2 : "+Arrays.toString(array2));
+				int count =0;
+				for (int i = 0; i < array1.length; i++)
+				{
+					for (int j = 0; j < array2.length; j++)
+					{
+						if(array1[i] == (array2[j]))
+						{
+							count++;
+							System.out.println("Common element is : "+(array1[i]));
+						}
+					}
+				}
+		System.out.println("count = " + count);
 	}
-
-	private static int doSomething(int value){
-		try{
-			System.out.println("try block");
-			return value/10;
-		}
-		catch(Exception e){
-			return value;
-		}
-		finally{
-			System.out.println("finally block");
-			return 100;
-
-		}
-	}
-
-
-	
-
-	
-
 }
