@@ -20,7 +20,7 @@ public class StreamExample {
 		cities.add("chennai");
 		System.out.println(cities.stream().sorted().collect(Collectors.toList()));
 		System.out.println(cities.stream().filter(x -> x.startsWith("B")).count());
-		//cities.stream().filter((s) -> s.startsWith("A")).forEach(System.out::println);
+		//cities.stream().filter((s) -> s.startsWith("A")).forEach(System.out::println);N
 		
 		System.out.println(LocalDate.now());
 		

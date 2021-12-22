@@ -1,16 +1,6 @@
 package com.se.employee;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -22,6 +12,12 @@ public class Java8Interview {
 		
 		List<Employee> empList = new ArrayList<>();
 		createEmpList(empList);
+
+		System.out.println(empList.stream().map(emp ->
+		{
+			emp.setName("Mr."+emp.getName());
+			return emp;
+		}).collect(Collectors.toList()));
 		
 		Map<String, List<Employee>> empMapBasedOnCity = empList.stream().collect(Collectors.groupingBy(Employee :: getCity, Collectors.toList()));
 		
@@ -86,7 +82,9 @@ public class Java8Interview {
            System.out.println(e1.hashCode()+"---------"+e2.hashCode());
             
            System.out.println(employees.size());
-           
+
+
+          // empList.stream().
           
            
            //empList.stream().sorted(Comparator.comparing(Employee::getName).thenComparing(Employee::getSalary)).collect(Collectors.toList());

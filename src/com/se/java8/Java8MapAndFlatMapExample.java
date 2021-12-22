@@ -1,8 +1,7 @@
 package com.se.java8;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Java8MapAndFlatMapExample {
@@ -21,9 +20,11 @@ public class Java8MapAndFlatMapExample {
         List<String> locationsOfInstitutes = instituteList.stream().flatMap(x ->x.getLocations().stream()).collect(Collectors.toList());
 		
 		System.out.println(locationsOfInstitutes);
-		
-
-	}
+		List<String> strList = Arrays.asList("Amanda","Rob", "sunny","Amanda", "Rob", "Rob");
+        HashSet<String> set = new HashSet<>();
+		Set<String> nonDuplicates = strList.stream().filter(x -> !set.add(x)).collect(Collectors.toSet());
+		System.out.println(nonDuplicates);
+		}
 
 }
 

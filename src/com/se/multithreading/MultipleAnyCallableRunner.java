@@ -11,7 +11,7 @@ public class MultipleAnyCallableRunner {
         ExecutorService executorService = Executors.newFixedThreadPool(1);
         List<CallableTask> tasks = List.of(new CallableTask("Durga"), new CallableTask("In28Minutes"), new CallableTask("Learning "));
         String result = executorService.invokeAny(tasks);
-
+        System.out.println(Runtime.getRuntime().availableProcessors());
         System.out.println(result);
         executorService.shutdown();
     }
