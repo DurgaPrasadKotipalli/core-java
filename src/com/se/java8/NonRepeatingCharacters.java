@@ -9,10 +9,9 @@ import java.util.stream.Collectors;
 public class NonRepeatingCharacters {
 
     public static void main(String[] args) {
-        String str = "my name is Raju";
-        System.out.println(NonRepeatingCharacters.secondNonRepeatingCharacter(str));
-        List<Integer> list= Arrays.asList(1, 2,2, 3,4,4,5,6,6,7,8,9);
-        System.out.println(NonRepeatingCharacters.findNonRepeatingNumbers(list));
+
+
+        //System.out.println(str);
 
     }
 

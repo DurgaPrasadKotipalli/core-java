@@ -1,11 +1,12 @@
 package com.ds.bt.sorting;
 
 import java.util.Arrays;
+//finds min value and puts it starting position
 
 public class SelectionSort {
     public static void main(String args[])
     {
-        int arr[] = {14, 256, 10, 56, 100, 4, 1, 13, 0};
+        int arr[] = {14, 256, 10, 56, 100, 4, 1, 56, 13, 0};
         SelectionSort s = new SelectionSort();
         s.sort(arr);
         System.out.println("Array after sorting "+ Arrays.toString(arr));

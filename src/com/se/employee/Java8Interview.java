@@ -1,9 +1,13 @@
 package com.se.employee;
 
+import com.se.strings.Book;
+
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Java8Interview {
 
@@ -60,7 +64,7 @@ public class Java8Interview {
 		
 		Map<String, Long> duplicates = strList.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 		
-		System.out.println(duplicates);
+		System.out.println("duplicates using function identity()" +duplicates);
 		
            double b = Math.sqrt(3);
            Math.ceil(Math.sqrt(3));
@@ -88,16 +92,55 @@ public class Java8Interview {
           
            
            //empList.stream().sorted(Comparator.comparing(Employee::getName).thenComparing(Employee::getSalary)).collect(Collectors.toList());
-           
-         
-       	
 
-		
-		
-		
+		List<Employee> increasedSalaries = empList.stream().peek(e -> e.setSalary((int) (e.getSalary() * 1.10))).collect(Collectors.toList());
+		System.out.println("increased salaries");
+		System.out.println(increasedSalaries);
 
-		
-		
+		Stream.of("apple", "banana", "cherry", "date", "elderberry")
+				.peek(s -> System.out.println("Before filter: " + s))
+				.filter(s -> s.length() > 5)
+				.peek(s -> System.out.println("After filter: " + s))
+				.forEach(System.out::println);
+
+		//Find occurrence of each element in the list
+		List<Integer> list = Arrays.asList(1, 2, 4, 2, 3, 6, 12, 2, 6, 4, 5, 6, 3, 0);
+		Map<Integer, Integer> countMap = list.stream()
+				.collect(Collectors.toMap(
+				num -> num,
+				num -> Collections.frequency(list, num),
+				(existingVal, newVal) -> existingVal
+				));
+
+		//list.stream().collect(Collectors.groupingBy( num -> num, Collections.frequency(list, num) ));
+
+		//System.out.println(countMap);
+
+		List<Integer> list1 = Arrays.asList(1, 2, 3);
+		List<Integer> list2 = Arrays.asList(1, 2, 3, 4);
+		boolean disjoint = Collections.disjoint(list1, list2);
+		if(disjoint){
+			System.out.println("The two lists have no common elements");
+		}else{
+			System.out.println("The two lists have common elements");
+		}
+
+		List<Integer> list3 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8 , 9, 10);
+		Collections.rotate(list3, -15);
+
+		System.out.println(list3);
+
+		List<Book> bookList = new ArrayList<>();
+		bookList.add(new Book("The Fellowship of the Ring", 1954, "0395489318"));
+		bookList.add(new Book("The Two Towers", 1954, "0345339711"));
+		bookList.add(new Book("The Return of the King", 1955, "0618129111"));
+		bookList.add(new Book("The C", 1976, "0454629111"));
+
+		Map<String, Book> bookMap = bookList.stream().collect(
+				Collectors.toMap(Book::getName, Function.identity(),
+						(existing, replacement) -> existing, TreeMap::new));
+
+		System.out.println(bookMap);
 
 	}
 	

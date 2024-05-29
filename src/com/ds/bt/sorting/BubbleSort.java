@@ -3,7 +3,7 @@ package com.ds.bt.sorting;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+//find max value in each iteration and puts at last position
 public class BubbleSort {
 
     static int countOfIterations=0;

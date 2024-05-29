@@ -7,8 +7,8 @@ public class SubArraySum {
 
     public static void main(String[] args){
         System.out.println("All Non-empty Subarrays");
-        int arr[] = new int[]{1, 4, 20, 3, 10, 5};
-        System.out.println(minSubArrayLength(arr, arr.length, 33));
+        int arr[] = new int[]{2, 4, 6, 10, 2, 1};
+        System.out.println(minSubArrayLength(arr, arr.length, 12));
     }
 
 

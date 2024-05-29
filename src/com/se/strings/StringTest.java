@@ -1,44 +1,31 @@
 package com.se.strings;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-public class StringTest {
+public class StringTest  extends Thread{
+
+
 
 	public static void main(String[] args) {
 
-		String str1 = "SAKET";
-		
-		//System.out.println(str1.toLowerCase().matches(".*[aeiou].*"));
-		  
-        char[] chars = str1.toCharArray();
-     
-       
-       
-  
-        StringBuffer sb = new StringBuffer();
-  
-        for (int i = 0; i < chars.length; i++)
-        {
-            if( (chars[i] != ' ') )
-            {
-                sb.append(chars[i]);
-            }
-           
-        } 
-        //System.out.println(sb);
-        try {
-			throw new IOException("Hello");
-		}catch(IOException | ArithmeticException e) {
-			System.out.println(e.getMessage());
-		}
-		
-        Integer value1 = null;
-        Optional<Integer> a = Optional.ofNullable(null);
-        
-        System.out.println(a);
+
+        StringTest st = new StringTest();
+        st.start();
 		
 
 	}
 
+}
+
+class Test2
+{
+    public int value;
+    public int hashCode(){
+        return (int)(value^5);
+    }
 }
